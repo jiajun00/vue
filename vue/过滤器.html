@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<script>
+		window.onload = function(){
+			var c = new Vue({
+				el:'#box',
+				data:{
+					
+				}
+			});
+		};
+	</script>
+	<body>
+		<div id="box">
+			{{'welcome'}}
+			<br/>
+			{{'welcome' |uppercase}}
+			<br />
+			{{'WELCOME' |lowercase}}
+			<br/>
+			{{'welcome' |capitalize}}
+			<br/>
+			{{12|currency '¥'}}
+		</div>
+	</body>
+</html>

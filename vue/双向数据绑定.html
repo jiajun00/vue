@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<script>
+		window.onload = function(){
+			var c = new Vue({
+				el:'#box',
+				data:{
+					msg:'first <h3>vue</h3> !'
+				}
+			});
+		};
+	</script>
+	<body>
+		<div id="box">
+			<input type="text" v-model="msg">
+			<br />
+			<input type="text" v-model="msg">
+			<br />
+			{{msg}}
+			<br />
+			<!--只绑定一次-->
+			{{*msg}}
+			<br />
+			<!--html转义输出-->
+			{{{msg}}}
+		</div>
+	</body>
+</html>

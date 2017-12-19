@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<script>
+		window.onload = function(){
+			var c = new Vue({
+				el:'#box',
+				data:{
+					arr:['apple','banner','pear'],
+					json:{a:'apple',b:'banner',c:'pear'}
+				}
+			});
+		};
+	</script>
+	<body>
+		<div id="box">
+			<ul>
+				<li v-for='value in arr'>
+					{{$index}} ----- {{value}} 
+				</li>
+			</ul>
+			<hr/>
+			<ul>
+				<li v-for='value in json'>
+					{{$index}} _______ {{value}} _____ {{$key}}
+				</li>
+			</ul>
+			<hr>
+			<ul>
+				<li v-for='(k,v) in json'>
+					{{k}} _______ {{v}} ___ {{$key}} ___ {{$index}}
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

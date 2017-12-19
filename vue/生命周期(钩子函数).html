@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<script>
+		window.onload = function(){
+			var vm = new Vue({
+				el:'#box',
+				data:{
+					msg:'first vue!'
+				},
+				created:function(){
+					alert('创建实例');
+				},
+				beforeCompile:function(){
+					alert('编译前');
+				},
+				compiled:function(){
+					alert('编译后');
+				},
+				ready:function(){
+					alert('插入到文档中');
+				},
+				beforeDestroy:function(){
+					alert('摧毁之前');
+				},
+				destroyed:function(){
+					alert('摧毁之后');
+				}
+			});
+			document.onclick = function(){
+				vm.$destroy();
+			};
+		};
+		
+	</script>
+	<body>
+		<div id="box">
+			{{msg}}
+		</div>
+	</body>
+</html>

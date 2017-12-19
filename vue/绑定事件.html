@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<script>
+		window.onload = function(){
+			var c = new Vue({
+				el:'#box',
+				data:{
+					arr:['apple','banner','pear'],
+					json:{a:'apple',b:'banner',c:'pear'},
+					button:false,
+					url:'https://www.baidu.com/img/bd_logo1.png',
+					w:'200px'
+				},
+				methods:{
+					show:function(){
+						alert(1);
+					},
+					show_a:function(ev,b){
+						alert(ev.clientX);
+						alert(b);
+					},
+					show_key:function(ev){
+						alert(ev.keyCode);
+					},
+					add:function(){
+						this.arr.push('tomato')
+					}
+				}
+			});
+		};
+	</script>
+	<body>
+		<div id="box">
+			<input type="button" value="弹窗" v-on:click="show()">
+			<input type="button" value="添加" v-on:click="add()">
+			<input type="button" value="鼠标移入" v-on:mouseover="add()">
+			<input type="button" value="鼠标移出" v-on:mouseout="add()">
+			<ul>
+				<li v-for='v in arr'>{{v}}</li>
+			</ul>
+			<br/>
+			<hr/>
+			<input type="button" value="显示" v-on:click="button=true">
+			<input type="button" value="隐藏" v-on:click="button=false">
+			<div style="width: 100px;height: 100px;background-color: red;" v-show="button"></div>
+			
+			<hr/>
+			<input type="button" value="事件对象" @click="show_a($event,12)" />
+			<hr />
+			<!--键盘事件-->
+			<input type="text" @keydown="show_key($event)" />
+			
+			<!--属性绑定事件-->
+			<img v-bind:src="url" v-bind:width="w"/>
+			<img :src="url" :width="w"/>
+		</div>
+	</body>
+</html>

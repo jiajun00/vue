@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	
+	<body>
+		<style type="text/css">
+			[v-cloak]{
+				display:none;
+			}
+		</style>
+		<div id="box">
+			<span>{{msg}}</span>
+		</div>
+		
+	</body>
+</html>
+<script>
+		var vm = new Vue({
+			el:'#box',
+			me:'test',
+			data:{
+				msg:'vue'
+			}
+		});
+		vm.$options
+	</script>
